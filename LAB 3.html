@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 3 CONDITIONALS IN LOOP</title>
+    </head>
+    <body style="margin:0; padding:0; font-family:Segoe UI, Arial, sans-serif; background:#888;">
+        <canvas id="silk-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;"></canvas>
+        <div style="max-width:500px; margin:40px auto; background:#f5f5dc; border-radius:16px; box-shadow:0 2px 16px rgba(0,0,0,0.12); padding:32px 24px; text-align:center; position:relative;">
+            <h2 style="margin-top:0;">Kenjin B. Seloterio</h2>
+            <h2>ICT-1201</h2>   
+            <i>Mga Even and Odd Numbers mula 0 to 15</i><br><br>
+            <div id="numbers"></div>
+        </div>
+        <script>
+            // Silk-like animated background
+            const canvas = document.getElementById('silk-bg');
+            const ctx = canvas.getContext('2d');
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            function drawSilk(t) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < 40; i++) {
+                    ctx.save();
+                    let x = canvas.width/2 + Math.sin(t/800 + i) * canvas.width/3 * Math.sin(i + t/1200);
+                    let y = canvas.height/2 + Math.cos(t/900 + i) * canvas.height/3 * Math.cos(i + t/1000);
+                    let r = 120 + 80 * Math.sin(i + t/700);
+                    let g = 110 + 100 * Math.cos(i + t/900);
+                    let b = 130 + 90 * Math.sin(i + t/500);
+                    ctx.beginPath();
+                    ctx.arc(x, y, 120 + 40 * Math.sin(i + t/1000), 0, 2 * Math.PI);
+                    ctx.fillStyle = `rgba(${Math.floor(r)},${Math.floor(g)},${Math.floor(b)},0.13)`;
+                    ctx.fill();
+                    ctx.restore();
+                }
+                requestAnimationFrame(drawSilk);
+            }
+            requestAnimationFrame(drawSilk);
+
+            // Numbers output
+            var colors = [
+                "#e6194b", "#3cb44b", "#ffe119", "#4363d8", "#f58231", "#911eb4", "#46f0f0", "#f032e6",
+                "#bcf60c", "#fabebe", "#008080", "#e6beff", "#9a6324", "#fffac8", "#800000", "#aaffc3"
+            ];
+            var html = "";
+            for (var x=0; x<=15; x++) {
+                var color = colors[x % colors.length];
+                var type = (x % 2 === 0) ? "even" : "odd";
+                html += '<span style="color:' + color + '; font-weight:bold; font-size:1.2em;">' + x + ' is ' + type + '</span><br>';
+            }
+            document.getElementById("numbers").innerHTML = html;
+        </script>
+    </body>
+</html>

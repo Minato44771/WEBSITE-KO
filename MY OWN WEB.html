@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kenjin B. Seloterio</title>
+	
+	<style>
+		body {
+			font-family: 'Segoe UI', Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background: #f5f5dc; 
+			color: #fff;
+			transition: background 0.3s, color 0.3s;
+		}
+		.container {
+			max-width: 700px;
+			margin: 40px auto;
+			background: #b7a183; 
+			border-radius: 12px;
+			box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+			padding: 32px 24px;
+		}
+
+		h1, h2 {
+			text-align: center;
+		}
+		.profile-img {
+			display: block;
+			margin: 0 auto 16px auto;
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			object-fit: cover;
+			border: 3px solid #ADFF2F;
+		}
+		.info {
+			margin: 24px 0;
+			font-size: 1.1em;
+		}
+		.dark-mode {
+			background: #e4dcc2; 
+			color: #fff;
+		}
+		.dark-mode .container {
+			background: #a98c6d; 
+			box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+		}
+		.profile-img {
+			display: block;
+			margin: 0 auto 16px auto;
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			object-fit: cover;
+			border: 3px solid #ADFF2F;
+		}
+		/* Text cursor trail effect styles */
+		.text-cursor-item {
+			position: fixed;
+			pointer-events: none;
+			font-size: 2em;
+
+		}
+		@media (max-width: 600px) {
+			.container {
+				padding: 16px 8px;
+			}
+			h1 {
+				font-size: 1.7em;
+			}
+		}
+		/* Floating scroll effect styles */
+		.scroll-float {
+			position: fixed;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 10%;
+			background: rgba(139, 92, 42, 0.85); /* brown with opacity */
+			color: #fff;
+			padding: 16px 32px;
+			border-radius: 24px;
+			font-size: 2em;
+			font-weight: bold;
+			box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+			opacity: 0;
+			transition: opacity 0.8s, transform 1s cubic-bezier(0.68,-0.55,0.27,1.55);
+			z-index: 1000;
+			text-align: center;
+		}
+		.scroll-float.visible {
+			opacity: 1;
+			transform: translateX(-50%) scale(1.1);
+		}
+	</style>
+</head>
+<body>
+	
+	<main class="container" tabindex="-1">
+		<button class="toggle-btn" id="toggleMode" aria-label="Toggle dark mode">Dark Mode</button>
+	
+		<img src="C:\Users\kenji\OneDrive\Pictures\Camera Roll 1\WIN_20250920_23_35_02_Pro.jpg" alt="Kenjin B. Seloterio profile picture" class="profile-img">
+		<h1>Kenjin B. Seloterio</h1>
+		<h2>Student and President | ICT-1201</h2>
+		<div class="info">
+			<p>Hello! I'm Kenjin B. Seloterio, a handsome, passionate, and hardworking man currently studying at STI COLLEGE Caloocan.</p>
+			<ul>
+				<li><strong>My age:</strong> 17 years old</li>
+                <li><strong>My Schooling:</strong> I graduated at NAES with Honors, Graduated MBASHS Main with Honors and currently with High Honors at STI COLLEGE Caloocan.</li>
+				<li><strong>My hobbies are:</strong> Gaming, watching Anime, eating lots of Foods and cycling</li>
+				<li><strong>My favorite Shows:</strong> Suits, Cars, Demon slayer, Attack on Titan and One piece</li>
+				<li><strong>My favorite Quote:</strong> "Anyone can do my job, but no one can be me" - Harvey Specter from the TV show called SUITS</li>
+				<li><strong>Current Role:</strong> President of the ICT-1201 and Finalist of MR. STI 2025</li>
+			</ul>
+		</div>
+		
+		<div class="info" style="margin-top:24px; background:rgba(183,161,131,0.7); border-radius:12px; padding:20px;">
+			<h2>More About Me</h2>
+			<p>I love anything about technology, I love to fix dying computers, old computers and abandoned computers. I always watched tutorials about fixing a computer and ofcourse web developing, creating a system and a game</p>
+		</div>
+		<style>
+			.toggle-btn {
+				position: fixed;
+				top: 16px;
+				right: 16px;
+				background: #4fc3f7;
+				color: #fff;
+				border: none;
+				border-radius: 20px;
+				padding: 10px 22px;
+				font-size: 1em;
+				cursor: pointer;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+				transition: background 0.3s;
+			}
+		</style>
+		
+		<div class="info" style="margin-top:24px; background:rgba(183,161,131,0.7); border-radius:12px; padding:20px;">
+			<h2>Skills & Favorites</h2>
+			<ul>
+				<li><strong>Skills:</strong> I am currently improving my HTML, CSS, JS, JAVA, C#, PYTHON, C++ skills</li>
+				<li><strong>Dream Job:</strong> IT manager, Cybersecurity or a IT Seaman</li>
+				<li><strong>Favorite Food:</strong> Pizza, Carbonara, Spaghetti, Burgers and Lahat ng masasarap</li>
+			</ul>
+		</div>
+		<section>
+			<h2>Contact Mr. President here:</h2>
+			<p>Ang aking Email: <a href="https://mail.google.com/mail/u/0/?hl=en#inbox">kenjinseloterio8272008@gmail.com</a></p>
+            <p>Ang aking Epbidatcom: <a href="https://www.facebook.com/kenjin.seloterio.5">Kenjin Seloterio pogi in reyal layp</a></p>
+            <p>Ig Moots? <a href="https://www.instagram.com/kenjin_0827/">kenjin_0827</a></p>
+		</section>
+		<!-- Floating scroll effect text -->
+		<div class="scroll-float" id="scrollFloat">Akyat mo na boi wala na dito</div>
+	</main>
+	
+	<script>
+	
+	const btn = document.getElementById('toggleMode');
+	btn.addEventListener('click', function() {
+		document.body.classList.toggle('dark-mode');
+		btn.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+	});
+	
+	btn.addEventListener('keydown', function(e) {
+		if (e.key === 'Enter' || e.key === ' ') {
+			document.querySelector('main').focus();
+		}
+	});
+		// Floating scroll effect logic
+		const scrollFloat = document.getElementById('scrollFloat');
+		function checkScrollFloat() {
+			const scrollY = window.scrollY || window.pageYOffset;
+			const windowH = window.innerHeight;
+			const docH = document.body.scrollHeight;
+			// Show when scrolled past 50% of viewport, hide near bottom
+			if (scrollY > windowH * 0.5 && scrollY < docH - windowH * 0.4) {
+				scrollFloat.classList.add('visible');
+			} else {
+				scrollFloat.classList.remove('visible');
+			}
+		}
+		window.addEventListener('scroll', checkScrollFloat);
+		
+		checkScrollFloat();
+
+	</script>
+</body>
+</html>
